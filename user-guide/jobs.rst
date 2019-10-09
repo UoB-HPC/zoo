@@ -24,31 +24,62 @@ The following must be added to your batch script or interative ``qsub`` command 
 | Intel Skylake (12 core)  | Server CPU    | Skylake Gold | ``-lselect=1:ncpus=24:cputype=skylake6162`` |
 +--------------------------+---------------+--------------+---------------------------------------------+
 
+Additional nodes
+----------------
+
+The following devices can be made available, but are currently not configured.
+
++-------------------------+---------------+--------------+
+| Device                  | Class         | Architecture |
++=========================+===============+==============+
+| NVIDIA K20m             | HPC GPU       | Kepler       |
++-------------------------+---------------+--------------+
+| NVIDIA K40m             | HPC GPU       | Kepler       |
++-------------------------+---------------+--------------+
+| NVIDIA GTX 580          | Consumer GPU  | Fermi        |
++-------------------------+---------------+--------------+
+| NVIDIA GTX 680          | Consumer GPU  | Kepler       |
++-------------------------+---------------+--------------+
+| NVIDIA GTX 780 Ti       | Consumer GPU  | Kepler       |
++-------------------------+---------------+--------------+
+| NVIDIA GTX 980 Ti       | Consumer GPU  | Maxwell      |
++-------------------------+---------------+--------------+
+| NVIDIA GTX TITAN X      | Consumer GPU  | Pascal       |
++-------------------------+---------------+--------------+
+| AMD S9150               | HPC GPU       | Hawaii       |
++-------------------------+---------------+--------------+
+| AMD S10000              | HPC GPU       | Tahiti       |
++-------------------------+---------------+--------------+
+| AMD HD7970              | Consumer GPU  | Tahiti       |
++-------------------------+---------------+--------------+
+| AMD R9-295X2            | Consumer GPU  | Hawaii       |
++-------------------------+---------------+--------------+
+| AMD R9-290X             | Consumer GPU  | Hawaii       |
++-------------------------+---------------+--------------+
+| AMD Fury X              | Consumer GPU  | Fiji         |
++-------------------------+---------------+--------------+
+| AMD RX 480              | Consumer GPU  | Polaris      |
++-------------------------+---------------+--------------+
+| Intel Xeon E5-2697 v2   | Server CPU    | Ivy Bridge   |
++-------------------------+---------------+--------------+
+| AMD A10-7850K Radeon R7 | APU           | Kaveri       |
++-------------------------+---------------+--------------+
+| Intel Xeon Phi 7210     | MIC           | KNL          |
++-------------------------+---------------+--------------+
+| NVIDIA Jetson TX1       | ARMv8         | Cortex-A57   |
++-------------------------+---------------+--------------+
+| SoftIron Overdrive 1000 | ARMv8         | Cortex-A57   |
++-------------------------+---------------+--------------+
+| Marvell ThunderX2       | ARMv8         | TX2          |
++-------------------------+---------------+--------------+
+
+
+
+
 Queue configuration
 -------------------
 
 All jobs should be submitted to the default ``workq`` queue.
 
 
-
-.. |NVIDIA K20m             | HPC GPU       | Kepler       | `-lnodes=1:gpus=1:k20`       |
-   | NVIDIA K40m             | HPC GPU       | Kepler       | `-lnodes=1:gpus=1:k40`       |
-   | NVIDIA GTX 580          | Consumer GPU  | Fermi        | `-lnodes=1:gpus=1:gtx580`    |
-   | NVIDIA GTX 680          | Consumer GPU  | Kepler       | `-lnodes=1:gpus=1:gtx680`    |
-   | NVIDIA GTX 780 Ti       | Consumer GPU  | Kepler       | `-lnodes=1:gpus=1:gtx780ti`  |
-   | NVIDIA GTX 980 Ti       | Consumer GPU  | Maxwell      | `-lnodes=1:gpus=1:gtx980ti`  |
-   | NVIDIA GTX 1080 Ti      | Consumer GPU  | Pascal       | `-lnodes=1:gpus=1:gtx1080ti` |
-   | NVIDIA GTX TITAN X      | Consumer GPU  | Pascal       | `-lnodes=1:gpus=1:titanx`    |
-   | AMD S9150               | HPC GPU       | Hawaii       | `-lnodes=1:gpus=1:s9150`     |
-   | AMD S10000              | HPC GPU       | Tahiti       | Unavailable                  |
-   | AMD HD7970              | Consumer GPU  | Tahiti       | `-lnodes=1:gpus=1:hd7970`    |
-   | AMD R9-295X2            | Consumer GPU  | Hawaii       | `-lnodes=1:gpus=1:r9-295x2`  |
-   | AMD R9-290X             | Consumer GPU  | Hawaii       | `-lnodes=1:gpus=1:r9-290x`   |
-   | AMD Fury X              | Consumer GPU  | Fiji         | `-lnodes=1:gpus=1:furyx`     |
-   | AMD RX 480              | Consumer GPU  | Polaris      | `-lnodes=1:gpus=1:rx480`     |
-   | Intel Xeon E5-2697 v2   | Server CPU    | Ivy Bridge   | `-lnodes=1:ppn=24:ivybridge` |
-   | AMD A10-7850K Radeon R7 | APU           | Kaveri       | `-lnodes=1:kaveri`           |
-   | Intel Xeon Phi 7210     | MIC           | KNL          | `-lnodes=1:ppn=256:knl`      |
-   | NVIDIA Jetson TX1       | ARMv8         | Cortex-A57   | `-lnodes=1:ppn=4:jetson`     |
-   | SoftIron Overdrive 1000 | ARMv8         | Cortex-A57   | `-lnodes=1:ppn=4:overdrive`  |
 
