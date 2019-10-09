@@ -7,7 +7,7 @@ script:
 
 deploy:
   provider: pages
-  repo: uob-hpc/docs
+  repo: uob-hpc/zoo
   target-branch: gh-pages
   local-dir: _build/html
   github_token: $GITHUB_TOKEN
