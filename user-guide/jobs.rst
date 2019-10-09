@@ -24,6 +24,12 @@ The following must be added to your batch script or interative ``qsub`` command 
 | Intel Skylake (12 core)  | Server CPU    | Skylake Gold | ``-lselect=1:ncpus=24:cputype=skylake6162`` |
 +--------------------------+---------------+--------------+---------------------------------------------+
 
+Queue configuration
+-------------------
+
+All jobs should be submitted to the default ``workq`` queue.
+
+
 
 .. |NVIDIA K20m             | HPC GPU       | Kepler       | `-lnodes=1:gpus=1:k20`       |
    | NVIDIA K40m             | HPC GPU       | Kepler       | `-lnodes=1:gpus=1:k40`       |
