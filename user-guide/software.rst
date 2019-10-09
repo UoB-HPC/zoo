@@ -7,6 +7,7 @@ List available software
 -----------------------
 
 .. code-block:: bash
+
  module avail
 
 
@@ -14,6 +15,7 @@ Load a module
 -------------
 
 .. code-block:: bash
+
  module load <name>
 
 
@@ -21,6 +23,7 @@ Unload a module
 ---------------
 
 .. code-block:: bash
+
  module unload <name>
 
 
