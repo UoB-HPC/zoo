@@ -22,6 +22,12 @@ Please request access by email_ in the first instance.
    user-guide/software
 
 
+.. toctree::
+    :maxdepth: 2
+    :caption: Architecture Guides:
+
+    architecture/aurora
+
 
 Indices and tables
 ==================
