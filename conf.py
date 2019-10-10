@@ -57,8 +57,8 @@ master_doc = 'index'
 html_context = {
   # Create an "Edit on GitHub" link in the page headers.
   'display_github': True,
-  'github_user': 'gw4-isambard',
-  'github_repo': 'docs',
+  'github_user': 'uob-hpc',
+  'github_repo': 'zoo',
   'github_version': 'master/'
 }
 
