@@ -3,6 +3,13 @@ Running jobs
 
 The Zoo using a PBSPro scheduling system to manage the diverse compute resources.
 
+Using the queue
+---------------
+
+If you are unfamiliar with using a PBS queue, `this tutorial`_ may be useful.
+
+.. _this tutorial: https://learn.scientificprogramming.io/learn-to-use-pbs-pro-job-scheduler-ffd9c0ad680d
+
 Selecting nodes
 ---------------
 
