@@ -20,6 +20,7 @@ Please request access by email_ in the first instance.
    user-guide/connecting
    user-guide/jobs
    user-guide/software
+   user-guide/support
 
 
 .. toctree::
@@ -27,6 +28,7 @@ Please request access by email_ in the first instance.
     :caption: Architecture Guides:
 
     architecture/aurora
+    architecture/intel-nuc
 
 
 Indices and tables
