@@ -1,4 +1,4 @@
-tupport
+Support
 =======
 
 The HPC Zoo is run by a HPC Research Group at the University of Bristol as a research cluster.
