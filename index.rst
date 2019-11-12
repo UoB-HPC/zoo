@@ -30,6 +30,11 @@ Please request access by email_ in the first instance.
     architecture/aurora
     architecture/intel-nuc
 
+.. toctree::
+    :maxdepth: 2
+    :caption: Software and Tools:
+
+    tools/ocl-intercept-layer
 
 Indices and tables
 ==================
