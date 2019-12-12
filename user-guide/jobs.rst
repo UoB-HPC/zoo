@@ -30,6 +30,8 @@ The following must be added to your batch script or interative ``qsub`` command 
 +--------------------------+---------------+--------------+---------------------------------------------+
 | Intel Skylake (12 core)  | Server CPU    | Skylake Gold | ``-lselect=1:ncpus=24:cputype=skylake6162`` |
 +--------------------------+---------------+--------------+---------------------------------------------+
+| Ampere (32 core)         | Server CPU    | Armv8        | ``-lselect=1:ncpus=32:cputype=ampere``      |
++--------------------------+---------------+--------------+---------------------------------------------+
 
 Additional nodes
 ----------------
