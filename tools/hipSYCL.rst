@@ -15,6 +15,7 @@ Building for AMD GPUs
   syclcc-clang -std=c++14 -O3 --hipsycl-gpu-arch=gfx906 --hipsycl-platform=rocm  *.cpp
 
 The ``gpu-arch`` flag should be set to the following for the AMD GPUs in the Zoo:
+
 +------------+-------------+
 | GPU        | Flag option |
 +============+=============+
@@ -31,6 +32,7 @@ First load the cuda module: ``module load cuda/10.1``
   syclcc-clang -std=c++14 -O3 --hipsycl-gpu-arch=sm_60 --hipsycl-platform=cuda  *.cpp
 
 The ``gpu-arch`` flag should be set to the following for the AMD GPUs in the Zoo:
+
 +------------+-------------+
 | GPU        | Flag option |
 +============+=============+
