@@ -35,6 +35,7 @@ Please request access by email_ in the first instance.
     :caption: Software and Tools:
 
     tools/ocl-intercept-layer
+    tools/hipSYCL
 
 Indices and tables
 ==================
