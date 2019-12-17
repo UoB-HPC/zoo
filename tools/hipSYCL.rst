@@ -37,6 +37,7 @@ The ``gpu-arch`` flag should be set to the following for the AMD GPUs in the Zoo
 | GPU        | Flag option |
 +============+=============+
 | 2080 Ti    | ``sm_75``   |
++------------+-------------+
 | 1080 Ti    | ``sm_61``   |
 +------------+-------------+
 
