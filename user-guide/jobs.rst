@@ -28,7 +28,7 @@ The following must be added to your batch script or interative ``qsub`` command 
 +--------------------------+---------------+--------------+---------------------------------------------+
 | NEC SX-Aurora            | Vector Engine | NEC SX       | ``-lselect=1:nacc=1:acctype=aurora``        |
 +--------------------------+---------------+--------------+---------------------------------------------+
-| Intel Skylake (12 core)  | Server CPU    | Skylake Gold | ``-lselect=1:ncpus=24:cputype=skylake6162`` |
+| Intel Skylake (12 core)  | Server CPU    | Skylake Gold | ``-lselect=1:ncpus=24:cputype=skylake6126`` |
 +--------------------------+---------------+--------------+---------------------------------------------+
 | Ampere (32 core)         | Server CPU    | Armv8        | ``-lselect=1:ncpus=32:cputype=ampere``      |
 +--------------------------+---------------+--------------+---------------------------------------------+
