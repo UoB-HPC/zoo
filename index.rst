@@ -36,6 +36,7 @@ Please request access by email_ in the first instance.
 
     tools/ocl-intercept-layer
     tools/hipSYCL
+    tools/dpcpp
 
 Indices and tables
 ==================
