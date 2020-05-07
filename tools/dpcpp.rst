@@ -5,8 +5,8 @@ DPC++ is Intel implementation of SYCL 1.2.1 as part of oneAPI.
 
 A lot of the development is on GitHub, and we install it from top of tree occasionally.
 
-The latest version is in the `intel/oneapi/20200507` module.
-Earlier versions are in the `intel/oneapi/beta` and `llvm/sycl` modules.
+The latest version is in the ``intel/oneapi/20200507`` module.
+Earlier versions are in the ``intel/oneapi/beta`` and ``llvm/sycl`` modules.
 
 
 Building for Intel Xeon CPUs
