@@ -1,0 +1,242 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Intel OpenCL Intercept Layer &mdash; HPC Zoo  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="hipSYCL" href="hipSYCL.html" />
+    <link rel="prev" title="Intel NUC" href="../architecture/intel-nuc.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> HPC Zoo
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Zoo User Guide:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/connecting.html">Connecting to the Zoo</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/jobs.html">Running jobs</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/software.html">Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../user-guide/support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Architecture Guides:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/aurora.html">NEC SX-Aurora TSUBASA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/intel-nuc.html">Intel NUC</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software and Tools:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Intel OpenCL Intercept Layer</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#generate-a-timeline">Generate a timeline</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="hipSYCL.html">hipSYCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="dpcpp.html">DPC++</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">HPC Zoo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Intel OpenCL Intercept Layer</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/uob-hpc/zoo/blob/master/tools/ocl-intercept-layer.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="intel-opencl-intercept-layer">
+<h1>Intel OpenCL Intercept Layer<a class="headerlink" href="#intel-opencl-intercept-layer" title="Permalink to this headline">¶</a></h1>
+<p>The OpenCL Intercept Layer is a tool from Intel that can provide profiling information about kernel execution and OpenCL host API calls.</p>
+<div class="section" id="generate-a-timeline">
+<h2>Generate a timeline<a class="headerlink" href="#generate-a-timeline" title="Permalink to this headline">¶</a></h2>
+<p>Example usage is shown below. The results are placed in a file in <code class="docutils literal notranslate"><span class="pre">~/CLIntercept_Dump</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>module load intel/opencl-intercept-layer/39e6f56
+<span class="nv">LD_PRELOAD</span><span class="o">=</span>/nfs/software/x86_64/intel/opencl-intercept-layer/lib64/libOpenCL.so <span class="nv">CLI_ChromeCallLogging</span><span class="o">=</span><span class="m">1</span> <span class="nv">CLI_ChromePerformanceTiming</span><span class="o">=</span><span class="m">1</span> <span class="nv">CLI_DllName</span><span class="o">=</span>/nfs/software/x86_64/cuda/10.1/lib64/libOpenCL.so ./a.out
+</pre></div>
+</div>
+<p>To view the timeline, open Chrome locally and nativate to <code class="docutils literal notranslate"><span class="pre">chrome://tracing/</span></code> then load the generated <code class="docutils literal notranslate"><span class="pre">.json</span></code> file.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="hipSYCL.html" class="btn btn-neutral float-right" title="hipSYCL" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../architecture/intel-nuc.html" class="btn btn-neutral float-left" title="Intel NUC" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, University of Bristol
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

@@ -1,0 +1,399 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html4" lang="en" >
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Running jobs &mdash; HPC Zoo  documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+
+  
+  
+  
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+        <script type="text/javascript" src="../_static/language_data.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Software" href="software.html" />
+    <link rel="prev" title="Connecting to the Zoo" href="connecting.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home" alt="Documentation Home"> HPC Zoo
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Zoo User Guide:</span></p>
+<ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="connecting.html">Connecting to the Zoo</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Running jobs</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#using-the-queue">Using the queue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#selecting-nodes">Selecting nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#additional-nodes">Additional nodes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#queue-configuration">Queue configuration</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="software.html">Software</a></li>
+<li class="toctree-l1"><a class="reference internal" href="support.html">Support</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Architecture Guides:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/aurora.html">NEC SX-Aurora TSUBASA</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../architecture/intel-nuc.html">Intel NUC</a></li>
+</ul>
+<p class="caption"><span class="caption-text">Software and Tools:</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../tools/ocl-intercept-layer.html">Intel OpenCL Intercept Layer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/hipSYCL.html">hipSYCL</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../tools/dpcpp.html">DPC++</a></li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">HPC Zoo</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+        
+      <li>Running jobs</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/uob-hpc/zoo/blob/master/user-guide/jobs.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="running-jobs">
+<h1>Running jobs<a class="headerlink" href="#running-jobs" title="Permalink to this headline">¶</a></h1>
+<p>The Zoo using a PBSPro scheduling system to manage the diverse compute resources.</p>
+<div class="section" id="using-the-queue">
+<h2>Using the queue<a class="headerlink" href="#using-the-queue" title="Permalink to this headline">¶</a></h2>
+<p>If you are unfamiliar with using a PBS queue, <a class="reference external" href="https://learn.scientificprogramming.io/learn-to-use-pbs-pro-job-scheduler-ffd9c0ad680d">this tutorial</a> may be useful.</p>
+</div>
+<div class="section" id="selecting-nodes">
+<h2>Selecting nodes<a class="headerlink" href="#selecting-nodes" title="Permalink to this headline">¶</a></h2>
+<p>The following must be added to your batch script or interative <code class="docutils literal notranslate"><span class="pre">qsub</span></code> command to ensure the job is started on the correct architecture.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="26%" />
+<col width="15%" />
+<col width="14%" />
+<col width="45%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Device</th>
+<th class="head">Class</th>
+<th class="head">Architecture</th>
+<th class="head">Queue command</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>NVIDIA GTX 1080 Ti</td>
+<td>Consumer GPU</td>
+<td>Pascal</td>
+<td><code class="docutils literal notranslate"><span class="pre">-lselect=1:ngpus=1:gputype=gtx1080ti</span></code></td>
+</tr>
+<tr class="row-odd"><td>NVIDIA GTX 2080 Ti</td>
+<td>Consumer GPU</td>
+<td>Turing</td>
+<td><code class="docutils literal notranslate"><span class="pre">-lselect=1:ngpus=1:gputype=gtx2080ti</span></code></td>
+</tr>
+<tr class="row-even"><td>AMD Radeon VII</td>
+<td>Consumer GPU</td>
+<td>Vega 20</td>
+<td><code class="docutils literal notranslate"><span class="pre">-lselect=1:ngpus=1:gputype=radeonvii</span></code></td>
+</tr>
+<tr class="row-odd"><td>Intel NUC (Iris Pro 580)</td>
+<td>Embedded GPU</td>
+<td>Gen9</td>
+<td><code class="docutils literal notranslate"><span class="pre">-lselect=1:ngpus=1:gputype=irispro580</span></code></td>
+</tr>
+<tr class="row-even"><td>NEC SX-Aurora</td>
+<td>Vector Engine</td>
+<td>NEC SX</td>
+<td><code class="docutils literal notranslate"><span class="pre">-lselect=1:nacc=1:acctype=aurora</span></code></td>
+</tr>
+<tr class="row-odd"><td>Intel Skylake (12 core)</td>
+<td>Server CPU</td>
+<td>Skylake Gold</td>
+<td><code class="docutils literal notranslate"><span class="pre">-lselect=1:ncpus=24:cputype=skylake6126</span></code></td>
+</tr>
+<tr class="row-even"><td>Ampere (32 core)</td>
+<td>Server CPU</td>
+<td>Armv8</td>
+<td><code class="docutils literal notranslate"><span class="pre">-lselect=1:ncpus=32:cputype=ampere</span></code></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="additional-nodes">
+<h2>Additional nodes<a class="headerlink" href="#additional-nodes" title="Permalink to this headline">¶</a></h2>
+<p>The following devices can be made available, but are currently not configured.</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="46%" />
+<col width="28%" />
+<col width="26%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">Device</th>
+<th class="head">Class</th>
+<th class="head">Architecture</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>NVIDIA K20m</td>
+<td>HPC GPU</td>
+<td>Kepler</td>
+</tr>
+<tr class="row-odd"><td>NVIDIA K40m</td>
+<td>HPC GPU</td>
+<td>Kepler</td>
+</tr>
+<tr class="row-even"><td>NVIDIA GTX 580</td>
+<td>Consumer GPU</td>
+<td>Fermi</td>
+</tr>
+<tr class="row-odd"><td>NVIDIA GTX 680</td>
+<td>Consumer GPU</td>
+<td>Kepler</td>
+</tr>
+<tr class="row-even"><td>NVIDIA GTX 780 Ti</td>
+<td>Consumer GPU</td>
+<td>Kepler</td>
+</tr>
+<tr class="row-odd"><td>NVIDIA GTX 980 Ti</td>
+<td>Consumer GPU</td>
+<td>Maxwell</td>
+</tr>
+<tr class="row-even"><td>NVIDIA GTX TITAN X</td>
+<td>Consumer GPU</td>
+<td>Pascal</td>
+</tr>
+<tr class="row-odd"><td>AMD S9150</td>
+<td>HPC GPU</td>
+<td>Hawaii</td>
+</tr>
+<tr class="row-even"><td>AMD S10000</td>
+<td>HPC GPU</td>
+<td>Tahiti</td>
+</tr>
+<tr class="row-odd"><td>AMD HD7970</td>
+<td>Consumer GPU</td>
+<td>Tahiti</td>
+</tr>
+<tr class="row-even"><td>AMD R9-295X2</td>
+<td>Consumer GPU</td>
+<td>Hawaii</td>
+</tr>
+<tr class="row-odd"><td>AMD R9-290X</td>
+<td>Consumer GPU</td>
+<td>Hawaii</td>
+</tr>
+<tr class="row-even"><td>AMD Fury X</td>
+<td>Consumer GPU</td>
+<td>Fiji</td>
+</tr>
+<tr class="row-odd"><td>AMD RX 480</td>
+<td>Consumer GPU</td>
+<td>Polaris</td>
+</tr>
+<tr class="row-even"><td>Intel Xeon E5-2697 v2</td>
+<td>Server CPU</td>
+<td>Ivy Bridge</td>
+</tr>
+<tr class="row-odd"><td>AMD A10-7850K Radeon R7</td>
+<td>APU</td>
+<td>Kaveri</td>
+</tr>
+<tr class="row-even"><td>Intel Xeon Phi 7210</td>
+<td>MIC</td>
+<td>KNL</td>
+</tr>
+<tr class="row-odd"><td>NVIDIA Jetson TX1</td>
+<td>ARMv8</td>
+<td>Cortex-A57</td>
+</tr>
+<tr class="row-even"><td>SoftIron Overdrive 1000</td>
+<td>ARMv8</td>
+<td>Cortex-A57</td>
+</tr>
+<tr class="row-odd"><td>Marvell ThunderX2</td>
+<td>ARMv8</td>
+<td>TX2</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="queue-configuration">
+<h2>Queue configuration<a class="headerlink" href="#queue-configuration" title="Permalink to this headline">¶</a></h2>
+<p>All jobs should be submitted to the default <code class="docutils literal notranslate"><span class="pre">workq</span></code> queue.</p>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="software.html" class="btn btn-neutral float-right" title="Software" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="connecting.html" class="btn btn-neutral float-left" title="Connecting to the Zoo" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        
+        &copy; Copyright 2019, University of Bristol
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
